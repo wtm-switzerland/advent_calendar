@@ -38,10 +38,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-  - images/icons8-santa-48.png
-  - images/christmas-background.jpg
-  - images/christmas-tree.jpg
-  - celebration-christmas.jpg
+  - images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
