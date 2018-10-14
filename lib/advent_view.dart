@@ -5,7 +5,7 @@ class AdventViewWidget extends StatelessWidget {
   final int adventNumber;
 
   AdventViewWidget({@required this.adventNumber}) :
-        assert(adventNumber!=null), assert(adventNumber<24);
+        assert(adventNumber!=null), assert(adventNumber<25);
 
   @override
   Widget build(BuildContext context) => Scaffold(
