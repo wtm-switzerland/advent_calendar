@@ -19,7 +19,7 @@ class AdventStarButtonWidget extends StatelessWidget {
               alignment: const Alignment(0.0, 0.0),
               children: <Widget>[
                 Image.asset(
-                  'images/icons8-christmas-star.png',
+                  'images/icons/icons8-christmas-star.png',
                   height: 50.0,
                 ),
                 Text(

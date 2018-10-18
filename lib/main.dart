@@ -1,7 +1,8 @@
-import 'package:advent_calendar/advent_star_button.dart';
-import 'package:advent_calendar/advent_view.dart';
-
 import 'package:flutter/material.dart';
+
+import 'advent_star_button.dart';
+import 'advent_stocking_button.dart';
+import 'advent_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,28 +33,69 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Stack(
           children: <Widget>[
             Image.asset(
-              'images/christmas-background.jpg',
+              MediaQuery.of(context).orientation == Orientation.portrait
+                  ? 'images/background/christmas-background.jpg'
+                  : 'images/background/santa-background.png',
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
             ),
             GridView.count(
-              crossAxisCount: 4,
-              children: List.generate(
-                  24,
-                  (index) => AdventStarButtonWidget(
-                        text: (index + 1).toString(),
-                        buttonHandler: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  settings:
-                                      const RouteSettings(name: '/advent'),
-                                  builder: (context) => AdventViewWidget(
-                                        adventNumber: index + 1,
-                                      )));
-                        },
-                      )),
+              crossAxisCount:
+                  MediaQuery.of(context).orientation == Orientation.portrait
+                      ? 4
+                      : 6,
+              children: List.generate(24, (index) {
+                String image;
+
+                switch (index) {
+                  case 3:
+                    image = 'images/icons/icons8-ball-96.png';
+                    break;
+                  case 6:
+                    image = 'images/icons/icons8-stocking-96.png';
+                    break;
+                  case 12:
+                    image = 'images/icons/icons8-tree-96.png';
+                    break;
+                  case 18:
+                    image = 'images/icons/icons8-jingle-bell-48.png';
+                    break;
+                  case 21:
+                    image = 'images/icons/icons8-santa-48.png';
+                    break;
+                  case 23:
+                    image = 'images/icons/icons8-santa-claus-bag-96.png';
+                    break;
+                  default:
+                    return AdventStarButtonWidget(
+                      text: (index + 1).toString(),
+                      buttonHandler: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                settings:
+                                    const RouteSettings(name: '/advent_star'),
+                                builder: (context) => AdventViewWidget(
+                                      adventNumber: index + 1,
+                                    )));
+                      },
+                    );
+                }
+
+                return AdventSpecialIconButtonWidget(
+                    image: image,
+                    buttonHandler: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              settings:
+                                  const RouteSettings(name: '/advent_special'),
+                              builder: (context) => AdventViewWidget(
+                                    adventNumber: index + 1,
+                                  )));
+                    });
+              }),
             )
           ],
         ),

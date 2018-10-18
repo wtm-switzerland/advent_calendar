@@ -18,7 +18,7 @@ class AdventViewWidget extends StatelessWidget {
           alignment: const Alignment(0.0, 0.0),
           children: <Widget>[
             Image.asset(
-              'images/christmas-$adventNumber.jpg',
+              'images/background/christmas-$adventNumber.jpg',
               fit: BoxFit.cover,
               height: double.infinity,
               width: double.infinity,
