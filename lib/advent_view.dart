@@ -12,8 +12,8 @@ class AdventViewWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: AppBar(
-          title: Text('Advent $adventNumber'),
-        ),
+    title: Text('Advent $adventNumber'),
+  ),
         body: Stack(
           alignment: const Alignment(0.0, 0.0),
           children: <Widget>[
@@ -33,7 +33,8 @@ class AdventViewWidget extends StatelessWidget {
                     fontSize: 25.0,
                     color: Colors.white),
               ),
-            )
+            ),
+            const BackButton(),
           ],
         ),
       );

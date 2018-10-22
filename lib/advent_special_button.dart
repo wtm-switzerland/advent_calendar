@@ -19,7 +19,6 @@ class AdventSpecialIconButtonWidget extends StatelessWidget {
             onTap: buttonHandler,
             child: Image.asset(
               image,
-              height: 50.0,
             ),
           ),
         ),
