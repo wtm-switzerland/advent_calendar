@@ -11,9 +11,6 @@ class AdventViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(
-    title: Text('Advent $adventNumber'),
-  ),
         body: Stack(
           alignment: const Alignment(0.0, 0.0),
           children: <Widget>[
@@ -26,7 +23,7 @@ class AdventViewWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                ChristmasWishes.wishesList[adventNumber-1],
+                ChristmasWishes.wishesList[adventNumber - 1],
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontWeight: FontWeight.bold,
@@ -34,7 +31,14 @@ class AdventViewWidget extends StatelessWidget {
                     color: Colors.white),
               ),
             ),
-            const BackButton(),
+            const SafeArea(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: BackButton(
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       );
