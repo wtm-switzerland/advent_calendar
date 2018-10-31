@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'advent_star_button.dart';
 import 'advent_special_button.dart';
+import 'advent_star_button.dart';
 import 'advent_view.dart';
 
 void main() => runApp(MyApp());
@@ -29,7 +29,21 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) => Scaffold(
-        appBar: AppBar(title: Text(widget.title)),
+        appBar: AppBar(
+          title: Text(widget.title),
+          actions: <Widget>[
+            PopupMenuButton<_MenuItem>(
+                onSelected: (menuItem) {
+                  print(menuItem.toString());
+                },
+                itemBuilder: (context) => _buildMenu.entries
+                    .map((entry) => PopupMenuItem<_MenuItem>(
+                          value: entry.key,
+                          child: Text(entry.value),
+                        ))
+                    .toList()),
+          ],
+        ),
         body: Stack(
           children: <Widget>[
             Image.asset(
@@ -101,3 +115,8 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
 }
+
+enum _MenuItem { about }
+
+Map<_MenuItem, String> _buildMenu = <_MenuItem, String>{}..[_MenuItem.about] =
+    'About';
