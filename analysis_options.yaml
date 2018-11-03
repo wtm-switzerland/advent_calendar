@@ -33,7 +33,6 @@ linter:
     #- sort_constructors_first
 
     # Disabled pre-existing findings.
-    # TODO(dotdoom): make this list empty.
     #- avoid_classes_with_only_static_members
     #- avoid_positional_boolean_parameters
     #- prefer_final_locals

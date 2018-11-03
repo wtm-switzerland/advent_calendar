@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'advent_special_button.dart';
 import 'advent_star_button.dart';
 import 'advent_view.dart';
+import 'views/about_app_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -34,7 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: <Widget>[
             PopupMenuButton<_MenuItem>(
                 onSelected: (menuItem) {
-                  print(menuItem.toString());
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AboutAppView()));
                 },
                 itemBuilder: (context) => _buildMenu.entries
                     .map((entry) => PopupMenuItem<_MenuItem>(
