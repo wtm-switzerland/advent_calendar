@@ -6,6 +6,19 @@ class AdventViewWidget extends StatelessWidget {
   final int adventNumber;
   final ChristmasDataType christmasDataType;
 
+  static const _textShadow = <Shadow>[
+    Shadow(
+      offset: Offset(3.0, 3.0),
+      blurRadius: 3.0,
+      color: Color.fromARGB(255, 0, 0, 0),
+    ),
+    Shadow(
+      offset: Offset(3.0, 3.0),
+      blurRadius: 8.0,
+      color: Color.fromARGB(125, 0, 0, 255),
+    ),
+  ];
+
   const AdventViewWidget(
       {@required this.adventNumber, @required this.christmasDataType})
       : assert(adventNumber != null),
@@ -34,6 +47,20 @@ class AdventViewWidget extends StatelessWidget {
                 ),
               ),
             ),
+            SafeArea(
+                child: Align(
+              alignment: Alignment.topCenter,
+              child: RaisedButton(
+                color: Colors.pinkAccent,
+                child: const Text('Play Christmas Song'),
+                elevation: 8.0,
+                shape: const BeveledRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
+                onPressed: () {
+                  print('Pressed');
+                },
+              ),
+            ))
           ],
         ),
       );
@@ -47,6 +74,7 @@ class AdventViewWidget extends StatelessWidget {
           ChristmasData.stories[adventNumber].title,
           textAlign: TextAlign.center,
           style: const TextStyle(
+            shadows: _textShadow,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -58,6 +86,7 @@ class AdventViewWidget extends StatelessWidget {
             ChristmasData.stories[adventNumber].content,
             textAlign: TextAlign.justify,
             style: const TextStyle(
+              shadows: _textShadow,
               fontStyle: FontStyle.italic,
               fontSize: 22.0,
               color: Colors.white,
@@ -70,6 +99,7 @@ class AdventViewWidget extends StatelessWidget {
           ChristmasData.poems[adventNumber].title,
           textAlign: TextAlign.center,
           style: const TextStyle(
+            shadows: _textShadow,
             fontSize: 25.0,
             fontWeight: FontWeight.bold,
             color: Colors.white,
@@ -81,6 +111,7 @@ class AdventViewWidget extends StatelessWidget {
             ChristmasData.poems[adventNumber].content,
             textAlign: TextAlign.center,
             style: const TextStyle(
+              shadows: _textShadow,
               fontStyle: FontStyle.italic,
               fontSize: 22.0,
               color: Colors.white,
@@ -96,6 +127,7 @@ class AdventViewWidget extends StatelessWidget {
                   : 'By '
                   '${ChristmasData.poems[adventNumber].author}',
               style: const TextStyle(
+                shadows: _textShadow,
                 fontSize: 15.0,
                 color: Colors.white,
               ),
@@ -110,6 +142,7 @@ class AdventViewWidget extends StatelessWidget {
             ChristmasData.wishesList[adventNumber - 1],
             textAlign: TextAlign.center,
             style: const TextStyle(
+              shadows: _textShadow,
               fontWeight: FontWeight.bold,
               fontSize: 25.0,
               color: Colors.white,
