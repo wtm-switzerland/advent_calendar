@@ -143,7 +143,32 @@ class ChristmasData {
             'business cards with a similar purpose.')
   };
 
-  static const musicUrlList = <String>[];
+  static const musicUrlList = <String>[
+    'https://www.youtube.com/watch?v=lylWDAo9hFw',
+    'https://www.youtube.com/watch?v=aSynDh_K0EE',
+    'https://www.youtube.com/watch?v=tReKR_ar5Ls',
+    'https://www.youtube.com/watch?v=UV8x7H3DD8Y',
+    'https://www.youtube.com/watch?v=_6xNuUEnh2g',
+    'https://www.youtube.com/watch?v=crFQpOCDfEc', //?
+    'https://www.youtube.com/watch?v=3KK6sMo8NBY',
+    'https://www.youtube.com/watch?v=IbRtGMm96F8',
+    'https://www.youtube.com/watch?v=VFGfCn5rKIM',
+    'https://www.youtube.com/watch?v=BtUK4AyHeTw',
+    'https://www.youtube.com/watch?v=mN7LW0Y00kE',
+    'https://www.youtube.com/watch?v=dxHL36aJvGU',
+    'https://www.youtube.com/watch?v=EvDxSW8mzvU',
+    'https://www.youtube.com/watch?v=apoFZv5J6xo',
+    'https://www.youtube.com/watch?v=zifGp5KTBKg',
+    'https://www.youtube.com/watch?v=KmddeUJJEuU',
+    'https://www.youtube.com/watch?v=73UqDX_quk0',
+    'https://www.youtube.com/watch?v=hwacxSnc4tI',
+    'https://www.youtube.com/watch?v=w9QLn7gM-hY',
+    'https://www.youtube.com/watch?v=5BRVkgaIcaE',
+    'https://www.youtube.com/watch?v=V9BZDpni56Y',
+    'https://www.youtube.com/watch?v=5vyMuxxLsD0',
+    'https://www.youtube.com/watch?v=yXQViqx6GMY',
+    'https://www.youtube.com/watch?v=E8gmARGvPlI',
+  ];
 }
 
 class Poem {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../actions/user_actions.dart';
 import '../data/christmas_data.dart';
 
 class AdventViewWidget extends StatelessWidget {
@@ -50,15 +51,19 @@ class AdventViewWidget extends StatelessWidget {
             SafeArea(
                 child: Align(
               alignment: Alignment.topCenter,
-              child: RaisedButton(
-                color: Colors.pinkAccent,
-                child: const Text('Play Christmas Song'),
-                elevation: 8.0,
-                shape: const BeveledRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                onPressed: () {
-                  print('Pressed');
-                },
+              child: Builder(
+                builder: (context) => RaisedButton(
+                      color: Colors.pinkAccent,
+                      child: const Text('Play Christmas Song'),
+                      elevation: 8.0,
+                      shape: const BeveledRectangleBorder(
+                          borderRadius:
+                              BorderRadius.all(Radius.circular(20.0))),
+                      onPressed: () async {
+                        await UserActions.launchUrl(context,
+                            ChristmasData.musicUrlList[adventNumber - 1]);
+                      },
+                    ),
               ),
             ))
           ],

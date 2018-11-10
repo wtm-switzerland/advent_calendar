@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class UserActions {
+  static Future<void> launchUrl(BuildContext context, String url) async {
+    if (await canLaunch(url)) {
+      await launch(url, forceSafariVC: false);
+    } else {
+      Scaffold.of(context).showSnackBar(SnackBar(
+        content: Text('Could not launch url $url'),
+        duration: Duration(seconds: 5),
+      ));
+    }
+  }
+}

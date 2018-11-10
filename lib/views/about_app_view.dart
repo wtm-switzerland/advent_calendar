@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../actions/user_actions.dart';
 
 const String aboutAppData = '''
 This app was created by [Katarina Sheremet](https://twitter.com/kate_sheremet) from [Women Techmakers Switzerland](https://www.meetup.com/wtm-switzerland/)
@@ -30,14 +31,7 @@ class AboutAppView extends StatelessWidget {
                   .copyWith(
                       p: const TextStyle(fontSize: 18.0, color: Colors.black)),
               onTapLink: (href) async {
-                if (await canLaunch(href)) {
-                  await launch(href, forceSafariVC: false);
-                } else {
-                  Scaffold.of(context).showSnackBar(SnackBar(
-                    content: Text('Could not launch url $href'),
-                    duration: Duration(seconds: 5),
-                  ));
-                }
+                await UserActions.launchUrl(context, href);
               }),
         ),
       );
