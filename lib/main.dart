@@ -1,3 +1,5 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 
 import 'advent_special_button.dart';
@@ -9,6 +11,9 @@ import 'views/advent_view.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  static final _analyticsNavigatorObserver =
+      FirebaseAnalyticsObserver(analytics: FirebaseAnalytics());
+
   @override
   Widget build(BuildContext context) => MaterialApp(
         title: 'Christmas Advent Calendar',
@@ -16,6 +21,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.indigo,
         ),
         home: const MyHomePage(title: 'Christmas Advent Calendar'),
+        navigatorObservers: [
+          _analyticsNavigatorObserver,
+        ],
       );
 }
 
@@ -36,8 +44,11 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: <Widget>[
             PopupMenuButton<_MenuItem>(
                 onSelected: (menuItem) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => AboutAppView()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          settings: const RouteSettings(name: '/about'),
+                          builder: (context) => AboutAppView()));
                 },
                 itemBuilder: (context) => _buildMenu.entries
                     .map((entry) => PopupMenuItem<_MenuItem>(
@@ -93,6 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     return AdventStarButtonWidget(
                       text: (index + 1).toString(),
                       buttonHandler: () {
+                        FirebaseAnalytics().logEvent(
+                            name: 'star_advent',
+                            parameters: {'advent_number': index + 1});
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -109,6 +123,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 return AdventSpecialIconButtonWidget(
                     image: image,
                     buttonHandler: () {
+                      FirebaseAnalytics().logEvent(
+                          name: 'special_advent',
+                          parameters: {'advent_number': index + 1});
                       Navigator.push(
                           context,
                           MaterialPageRoute(
