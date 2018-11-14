@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>535848245248-vme9dutmpjgg8aa6gtie9ugfd836ptq4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.535848245248-vme9dutmpjgg8aa6gtie9ugfd836ptq4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzZ57QV_9DbJaWNx5vmk2oy8ZYIk_-4Fk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>535848245248</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ch.womentechmakers.adventCalendar</string>
+	<key>PROJECT_ID</key>
+	<string>advent-calendar-97bcf</string>
+	<key>STORAGE_BUCKET</key>
+	<string>advent-calendar-97bcf.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:535848245248:ios:c0dc960750b3df84</string>
+	<key>DATABASE_URL</key>
+	<string>https://advent-calendar-97bcf.firebaseio.com</string>
+</dict>
+</plist>
