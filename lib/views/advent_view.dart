@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../actions/user_actions.dart';
 import '../data/christmas_data.dart';
 
-class AdventViewWidget extends StatelessWidget {
+class AdventView extends StatelessWidget {
   final int adventNumber;
   final ChristmasDataType christmasDataType;
 
@@ -20,7 +20,7 @@ class AdventViewWidget extends StatelessWidget {
     ),
   ];
 
-  const AdventViewWidget(
+  const AdventView(
       {@required this.adventNumber, @required this.christmasDataType})
       : assert(adventNumber != null),
         assert(adventNumber < 25),
