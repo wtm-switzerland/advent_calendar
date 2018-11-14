@@ -1,3 +1,4 @@
+import 'package:advent_calendar/widgets/animation/image_rotate.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +6,8 @@ import '../data/christmas_data.dart';
 import '../views/advent_view.dart';
 import 'advent_special_button.dart';
 import 'advent_star_button.dart';
+
+typedef WidgetWrapper = Widget Function(Widget);
 
 class AdventsGridWidget extends StatelessWidget {
   const AdventsGridWidget({
@@ -18,6 +21,8 @@ class AdventsGridWidget extends StatelessWidget {
         children: List.generate(24, (index) {
           String image;
           var contentType = ChristmasDataType.wish;
+          WidgetWrapper wrapper;
+
           switch (index) {
             case 3:
               image = 'images/icons/icons8-ball-96.png';
@@ -26,6 +31,7 @@ class AdventsGridWidget extends StatelessWidget {
             case 6:
               image = 'images/icons/icons8-stocking-96.png';
               contentType = ChristmasDataType.poem;
+              wrapper = (w) => ImageRotateWidget(child: w);
               break;
             case 12:
               image = 'images/icons/icons8-tree-96.png';
@@ -47,7 +53,7 @@ class AdventsGridWidget extends StatelessWidget {
                 text: (index + 1).toString(),
                 buttonHandler: () {
                   FirebaseAnalytics().logEvent(
-                      name: 'star_advent',
+                      name: 'advent_star',
                       parameters: {'advent_number': index + 1});
                   Navigator.push(
                       context,
@@ -60,12 +66,11 @@ class AdventsGridWidget extends StatelessWidget {
                 },
               );
           }
-          //TODO(ksheremet): Delete repeated code
-          return AdventSpecialIconButtonWidget(
+          var widget = AdventSpecialIconButtonWidget(
               image: image,
               buttonHandler: () {
                 FirebaseAnalytics().logEvent(
-                    name: 'special_advent',
+                    name: 'advent_special',
                     parameters: {'advent_number': index + 1});
                 Navigator.push(
                     context,
@@ -76,6 +81,10 @@ class AdventsGridWidget extends StatelessWidget {
                               christmasDataType: contentType,
                             )));
               });
+          if (wrapper != null) {
+            return wrapper(widget);
+          }
+          return widget;
         }),
       );
 }
