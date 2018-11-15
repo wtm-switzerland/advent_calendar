@@ -1,9 +1,10 @@
-import 'package:advent_calendar/widgets/animation/image_rotate.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
 import '../data/christmas_data.dart';
 import '../views/advent_view.dart';
+import '../widgets/animation/image_rotate.dart';
+import '../widgets/animation/rotation_transition.dart';
 import 'advent_special_button.dart';
 import 'advent_star_button.dart';
 
@@ -47,6 +48,7 @@ class AdventsGridWidget extends StatelessWidget {
               break;
             case 23:
               image = 'images/icons/icons8-santa-claus-bag-96.png';
+              wrapper = (w) => RotationTransitionWidget(child: w);
               break;
             default:
               return AdventStarButtonWidget(
