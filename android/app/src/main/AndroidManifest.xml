@@ -19,6 +19,10 @@
         <meta-data
                 android:name="com.google.firebase.messaging.default_notification_icon"
                 android:resource="@drawable/ic_notification" />
+        <!-- Disabling some features of Firebase Analytics:
+             https://firebase.google.com/support/guides/disable-analytics -->
+        <!-- Disable Advertising ID collection -->
+        <meta-data android:name="google_analytics_adid_collection_enabled" android:value="false" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
