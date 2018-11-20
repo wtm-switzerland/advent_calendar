@@ -32,7 +32,7 @@ class AdventsGridWidget extends StatelessWidget {
               break;
             case 6:
               image = 'images/icons/icons8-stocking-96.png';
-              contentType = ChristmasDataType.poem;
+              contentType = ChristmasDataType.story;
               wrapper = (w) => ImageRotateWidget(child: w);
               break;
             case 12:
@@ -50,6 +50,7 @@ class AdventsGridWidget extends StatelessWidget {
               break;
             case 23:
               image = 'images/icons/icons8-santa-claus-bag-96.png';
+              contentType = ChristmasDataType.poem;
               wrapper = (w) => RotationTransitionWidget(child: w);
               break;
             default:

@@ -15,7 +15,7 @@ class ChristmasData {
     'May the lights of Christmas be your guide and the Christmas carols fill you with cheer.',
     'One of the nice things about Christmas is that you can make people forget the past with a present.',
     'Christmas is a necessity. There has to be at least one day of the year to remind us that we\'re here for something else besides ourselves.',
-    'Wishing you Holidays filled with fun and laughter, and very best wishes for a fabulous New Year! ',
+    'Me: \“I want a magical Unicorn for Christmas\”\nSanta: \“Be realistic\”\nMe: \“Okay. I want 5 minutes to myself each day to drink my coffee hot and pee in peace.\”\nSanta: “What color Unicorn would you like?\”',
     'Wishing you a wonderful Christmas Season creating special memories with your beautiful family.',
     'Merry Christmas! And best wishes for a healthy, happy, and peaceful New Year.',
     'Wishing you a joyous Christmas and a prosperous New Year.',
@@ -32,7 +32,7 @@ class ChristmasData {
     'May all the sweet magic of Christmas conspire to gladden your heart and fill every desire.',
     'May the peace and joy of Christmas live in your heart all year long.',
     'May the blessings of peace, good will, and happiness be with you at Christmas and always.',
-    'Me: \“I want a magical Unicorn for Christmas\”\nSanta: \“Be realistic\”\nMe: \“Okay. I want 5 minutes to myself each day to drink my coffee hot and pee in peace.\”\nSanta: “What color Unicorn would you like?\”'
+    'Wishing you Holidays filled with fun and laughter, and very best wishes for a fabulous New Year! ',
   ];
 
   static var poems = {
@@ -43,18 +43,6 @@ class ChristmasData {
             'like bells and lights and tinsel, in some box upon a shelf.\n'
             'The good you do for others is good you do yourself.',
         author: 'Norman W. Brooks'),
-    7: Poem(
-        title: 'Christmas',
-        content: 'Christmas is more than a day in December\n'
-            'It\’s all of those things that we love to remember\n'
-            'Its carolers singing familiar refrains\n'
-            'Bright colored stockings and shiny toy trains\n'
-            'Streamers of tinsel and glass satin balls\n'
-            'Laughter that rings through the house and its halls\n'
-            'Christmas is more than a day in December\n'
-            'Its the magic and the love\n'
-            'That we\’ll always remember',
-        author: 'M.E. Miro'),
     13: Poem(
       title: 'Falling Snow\n',
       content: 'See the pretty snowflakes\n'
@@ -75,9 +63,30 @@ class ChristmasData {
           'What a pretty sight!',
       author: '',
     ),
+    24: Poem(
+        title: 'Christmas',
+        content: 'Christmas is more than a day in December\n'
+            'It\’s all of those things that we love to remember\n'
+            'Its carolers singing familiar refrains\n'
+            'Bright colored stockings and shiny toy trains\n'
+            'Streamers of tinsel and glass satin balls\n'
+            'Laughter that rings through the house and its halls\n'
+            'Christmas is more than a day in December\n'
+            'Its the magic and the love\n'
+            'That we\’ll always remember',
+        author: 'M.E. Miro'),
   };
 
   static var stories = {
+    7: Story(
+        title: 'Christmas Spirit',
+        content: 'It was just before Christmas and the magistrate was in '
+            'a happy mood. He asked the prisoner who was in '
+            'the dock, \"What are you charged with?\"\n '
+            'The prisoner replied, \"Doing my Christmas shopping too early.\"\n'
+            '\"That\'s no crime\", said the magistrate. \"Just how early were '
+            'you doing this shopping?\"\n'
+            '\"Before the shop opened\", answered the prisoner.'),
     19: Story(
         title: 'The Fir Tree',
         content: 'There was a young tree in a very enchanted forest. '

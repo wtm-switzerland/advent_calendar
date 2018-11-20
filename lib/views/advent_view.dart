@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../actions/user_actions.dart';
 import '../data/christmas_data.dart';
+import '../widgets/animation/text_pulse_color_animation.dart';
 
 class AdventView extends StatelessWidget {
   final int adventNumber;
@@ -100,15 +101,28 @@ class AdventView extends StatelessWidget {
         ));
         break;
       case ChristmasDataType.poem:
-        widgetList.add(Text(
-          ChristmasData.poems[adventNumber].title,
-          textAlign: TextAlign.center,
-          style: const TextStyle(
-            shadows: _textShadow,
-            fontSize: 25.0,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+        widgetList.add(Container(
+          height: 35.0,
+          child: adventNumber == 24
+              ? const TextPulseColorAnimation(
+                  text: 'Merry Christmas!',
+                  style: TextStyle(
+                    shadows: _textShadow,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                )
+              : Text(
+                  ChristmasData.poems[adventNumber].title,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(
+                    shadows: _textShadow,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
         ));
         widgetList.add(Padding(
           padding: const EdgeInsets.symmetric(vertical: 15.0),
