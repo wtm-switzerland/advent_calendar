@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../data/christmas_data.dart';
 import '../views/advent_view.dart';
+import '../widgets/animation/blink_animation.dart';
 import '../widgets/animation/image_rotate.dart';
 import '../widgets/animation/rotation_transition.dart';
 import 'advent_special_button.dart';
@@ -37,6 +38,7 @@ class AdventsGridWidget extends StatelessWidget {
             case 12:
               image = 'images/icons/icons8-tree-96.png';
               contentType = ChristmasDataType.poem;
+              wrapper = (w) => BlinkAnimationWidget(child: w);
               break;
             case 18:
               image = 'images/icons/icons8-jingle-bell-48.png';
