@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 
+import '../actions/user_actions.dart';
 import '../data/christmas_data.dart';
 import '../views/advent_view.dart';
 import '../widgets/animation/blink_animation.dart';
@@ -57,34 +58,49 @@ class AdventsGridWidget extends StatelessWidget {
               return AdventStarButtonWidget(
                 text: (index + 1).toString(),
                 buttonHandler: () {
-                  FirebaseAnalytics().logEvent(
-                      name: 'advent_star',
-                      parameters: {'advent_number': index + 1});
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          settings: const RouteSettings(name: '/advent_star'),
-                          builder: (context) => AdventView(
-                                adventNumber: index + 1,
-                                christmasDataType: contentType,
-                              )));
+                  if (((index + 1) == 1) || _isDateToShow(index)) {
+                    FirebaseAnalytics().logEvent(
+                        name: 'advent_star',
+                        parameters: {'advent_number': index + 1});
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            settings: const RouteSettings(name: '/advent_star'),
+                            builder: (context) => AdventView(
+                                  adventNumber: index + 1,
+                                  christmasDataType: contentType,
+                                )));
+                  } else {
+                    FirebaseAnalytics().logEvent(
+                        name: 'advent_star_early_try',
+                        parameters: {'advent_number': index + 1});
+                    UserActions.adventNotAvailableSnackBar(context, index);
+                  }
                 },
               );
           }
           var widget = AdventSpecialIconButtonWidget(
               image: image,
               buttonHandler: () {
-                FirebaseAnalytics().logEvent(
-                    name: 'advent_special',
-                    parameters: {'advent_number': index + 1});
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        settings: const RouteSettings(name: '/advent_special'),
-                        builder: (context) => AdventView(
-                              adventNumber: index + 1,
-                              christmasDataType: contentType,
-                            )));
+                if (((index + 1) == 1) || _isDateToShow(index)) {
+                  FirebaseAnalytics().logEvent(
+                      name: 'advent_special',
+                      parameters: {'advent_number': index + 1});
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          settings:
+                              const RouteSettings(name: '/advent_special'),
+                          builder: (context) => AdventView(
+                                adventNumber: index + 1,
+                                christmasDataType: contentType,
+                              )));
+                } else {
+                  UserActions.adventNotAvailableSnackBar(context, index);
+                  FirebaseAnalytics().logEvent(
+                      name: 'advent_speacial_early_try',
+                      parameters: {'advent_number': index + 1});
+                }
               });
           if (wrapper != null) {
             return wrapper(widget);
@@ -92,4 +108,7 @@ class AdventsGridWidget extends StatelessWidget {
           return widget;
         }),
       );
+
+  bool _isDateToShow(int index) =>
+      DateTime.now().isAfter(DateTime.utc(2018, 12, index + 1));
 }

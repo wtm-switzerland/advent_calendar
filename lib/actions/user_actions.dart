@@ -12,4 +12,12 @@ class UserActions {
       ));
     }
   }
+
+  static void adventNotAvailableSnackBar(BuildContext context, int index) {
+    Scaffold.of(context).showSnackBar(SnackBar(
+      content: Text('Try it on ${index + 1} '
+          'of December!'),
+      duration: Duration(seconds: 3),
+    ));
+  }
 }

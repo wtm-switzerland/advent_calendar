@@ -9,9 +9,9 @@ enum ChristmasDataType {
 class ChristmasData {
   static const wishesList = <String>[
     'Wishing you and your family a wonderful Holiday Season. With lots '
-        'of love from the WTM Switzerland’s.',
+        'of love from the Women Techmakers Switzerland’s.',
     'Wishing you a fun-filled Holiday season and best wishes for a Happy New Year!',
-    'To a healthy, happy, and peaceful New Year. Love from the WTM Switzerland.',
+    'To a healthy, happy, and peaceful New Year. Love from the Women Techmakers Switzerland.',
     'May the lights of Christmas be your guide and the Christmas carols fill you with cheer.',
     'One of the nice things about Christmas is that you can make people forget the past with a present.',
     'Christmas is a necessity. There has to be at least one day of the year to remind us that we\'re here for something else besides ourselves.',
@@ -21,7 +21,7 @@ class ChristmasData {
     'Wishing you a joyous Christmas and a prosperous New Year.',
     'Best wishes for the Holidays, and for health and happiness throughout the coming year.',
     'Warmest wishes for a happy Christmas and a wonderful New Year.',
-    'Merry Christmas from all of us at WTM Switzerland. We hope you have a very happy Holidays and we wish you all the best for the New Year.',
+    'Merry Christmas from all of us at Women Techmakers Switzerland. We hope you have a very happy Holidays and we wish you all the best for the New Year.',
     'May this Christmas end the present year on a cheerful note and make way for a fresh and bright New Year. Here’s wishing you a Merry Christmas and a Happy New Year!',
     'May the good times and treasures of the present become the golden memories of tomorrow. Wishing you lots of love, joy and happiness. Merry Christmas!',
     'May your Christmas sparkle with moments of love, laughter and goodwill, And may the year ahead be full of contentment and joy. Have a Merry Christmas.',
