@@ -7,3 +7,5 @@
 </td><td>
 <a href='TODO'><img alt='Get it on App Store' src='https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg' height='43px'/></a>
 </td></tr></table>
+
+<img src="main_screen_framed.png" height="500px" /><img src="advent_screen_framed.png" height="500px" />
